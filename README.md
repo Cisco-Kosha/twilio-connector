@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# twilio-connector
-=======
+
 # Kosha twilio Connector
 
 ## Description
