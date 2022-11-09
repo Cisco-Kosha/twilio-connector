@@ -1,8 +1,6 @@
 
 # Kosha twilio Connector
 
-## Description
-
 ## Build
 
 To build the project binary, run 
@@ -41,4 +39,3 @@ To generate OpenAPISpec version 3 from Swagger 2.0 specification, run -
 npm i api-spec-converter
 npx api-spec-converter --from=swagger_2 --to=openapi_3 --syntax=json ./docs/swagger.json > openapi.json
 ```
->>>>>>> cfaa689 (first commit)
