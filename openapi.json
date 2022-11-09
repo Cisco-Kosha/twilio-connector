@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "contact": {},
+    "title": "",
+    "version": ""
+  },
+  "servers": [],
+  "paths": {
+    "/api/v1/call": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "communication"
+        ],
+        "summary": "Make a phone call"
+      }
+    },
+    "/api/v1/message": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "communication"
+        ],
+        "summary": "Send a Message with the Twilio API for WhatsApp"
+      }
+    },
+    "/api/v1/specification/list": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "specification"
+        ],
+        "description": "Retrieve necessary environment variables",
+        "summary": "Get connector specification details"
+      }
+    },
+    "/api/v1/specification/test": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "specification"
+        ],
+        "description": "Check if domain account can be verified",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/models.Specification"
+              }
+            }
+          },
+          "description": "Enter auth and domain name properties"
+        },
+        "summary": "Test auth against the specification"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "models.Specification": {
+        "properties": {
+          "domain_name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    }
+  }
+}

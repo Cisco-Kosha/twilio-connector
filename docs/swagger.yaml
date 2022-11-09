@@ -1,0 +1,70 @@
+definitions:
+  models.Specification:
+    properties:
+      domain_name:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/call:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Make a phone call
+      tags:
+      - communication
+  /api/v1/message:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Send a Message with the Twilio API for WhatsApp
+      tags:
+      - communication
+  /api/v1/specification/list:
+    get:
+      description: Retrieve necessary environment variables
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Get connector specification details
+      tags:
+      - specification
+  /api/v1/specification/test:
+    get:
+      consumes:
+      - application/json
+      description: Check if domain account can be verified
+      parameters:
+      - description: Enter auth and domain name properties
+        in: body
+        name: text
+        schema:
+          $ref: '#/definitions/models.Specification'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Test auth against the specification
+      tags:
+      - specification
+swagger: "2.0"

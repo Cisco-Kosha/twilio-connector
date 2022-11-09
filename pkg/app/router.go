@@ -14,7 +14,6 @@ import (
 // @Summary Get connector specification details
 // @Description Retrieve necessary environment variables
 // @Tags specification
-// @Accept json
 // @Produce json
 // @Success 200 {object} object
 // @Router /api/v1/specification/list [get]
@@ -73,10 +72,10 @@ func (a *App) testConnectorSpecification(w http.ResponseWriter, r *http.Request)
 // sendWhatsAppMessage godoc
 // @Summary Send a Message with the Twilio API for WhatsApp
 // @Tags communication
-// @Accept  json
+// @Accept  x-www-form-urlencoded
 // @Produce  json
 // @Success 200
-// @Router /message [post]
+// @Router /api/v1/message [post]
 func (a *App) sendWhatsAppMessage(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -101,10 +100,10 @@ func (a *App) sendWhatsAppMessage(w http.ResponseWriter, r *http.Request) {
 // makePhoneCall godoc
 // @Summary Make a phone call
 // @Tags communication
-// @Accept  json
+// @Accept  x-www-form-urlencoded
 // @Produce  json
 // @Success 200
-// @Router /call [post]
+// @Router /api/v1/call [post]
 func (a *App) makePhoneCall(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
