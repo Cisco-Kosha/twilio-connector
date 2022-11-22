@@ -4,6 +4,11 @@ go 1.18
 
 require (
 	github.com/gorilla/mux v1.8.0
+	github.com/swaggo/swag v1.8.7
+	go.uber.org/zap v1.23.0
+)
+
+require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
@@ -21,5 +26,4 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.12 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	github.com/swaggo/files v0.0.0-20220610200504-28940afbdbfe // indirect
 )
