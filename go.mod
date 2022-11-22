@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/gorilla/mux v1.8.0
 	github.com/swaggo/swag v1.8.7
-	go.uber.org/zap v1.23.0
+	go.uber.org/zap v1.21.0
 )
 
 require (
