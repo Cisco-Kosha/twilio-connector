@@ -1,40 +1,23 @@
-# Kosha twilio Connector
+# Kosha Twilio Connector
 
-## Build
+Twilio is an API-driven platform that you can use to send SMS, WhatsApp, Voice, Video, email, and IoT communications from your software project.
 
-To build the project binary, run 
-```
-    go build -o main .
+The Kosha Twilio connector enables you to perform REST API operations from the Twilio API in your Kosha workflow or custom application. Using the Kosha Twilio connector, you can directly access the Twilio platform to:
 
-```
+* Make phone calls
+* Send messages over WhatsApp
 
-## Run locally
+Refer to the Kosha Twilio connector [API specification](openapi.json) for details.
 
-To run the project, simply provide env variables to supply needed credentials.
+## Authentication
 
+To authenticate when provisioning the Kosha Twilio connector, you need your:
 
-```bash
-go build -o main .
-USERNAME=<USERNAME> PASSWORD=<PASSWORD> ./main
-```
+* Twilio account string identifier (SID)
+* Twilio auth token
 
+## Kosha Connector Open Source Development
 
-This will start a worker and expose the API on port `8015` on the host machine
+All connectors Kosha shares on the marketplace are open source. We believe in fostering collaboration and open development. Everyone is welcome to contribute their ideas, improvements, and feedback for any Kosha connector. We encourage community engagement and appreciate any contributions that align with our goals of an open and collaborative API management platform.
 
-Swagger docs is available at `https://localhost:8015/docs`
-
-## Generating Swagger Documentation
-
-To generate `swagger.json` and `swagger.yaml` files based on the API documentation, simple run -
-
-```bash
-go install github.com/swaggo/swag/cmd/swag@latest
-swag init -g main.go --parseDependency --parseInternal
-```
-
-To generate OpenAPISpec version 3 from Swagger 2.0 specification, run -
-
-```bash
-npm i api-spec-converter
-npx api-spec-converter --from=swagger_2 --to=openapi_3 --syntax=json ./docs/swagger.json > openapi.json
-```
+Refer to the contribution guidelines for details.
